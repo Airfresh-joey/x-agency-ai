@@ -2,8 +2,27 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'AI Services | Strategy, Engineering & Leadership | X Agency AI',
-  description: 'Comprehensive AI services including strategy, engineering, leadership training, and custom AI agents. Transform your business with expert AI implementation.',
+  title: 'AI Services | Strategy, Engineering & Leadership',
+  description: 'Comprehensive AI services including AI strategy consulting, custom AI agent development, AI engineering, and leadership training. Proven across 50+ companies with 100+ high-ROI use cases. Transform your business with expert AI implementation.',
+  keywords: [
+    'AI strategy consulting',
+    'AI implementation services',
+    'custom AI agents',
+    'AI engineering',
+    'AI leadership training',
+    'AI transformation services',
+    'enterprise AI solutions',
+    'AI automation services',
+    'business AI consulting'
+  ],
+  openGraph: {
+    title: 'AI Services | Strategy, Engineering & Leadership | X Agency AI',
+    description: 'Comprehensive AI services including strategy, engineering, leadership training, and custom AI agents.',
+    images: ['/preview-homepage.png'],
+  },
+  alternates: {
+    canonical: 'https://x-agency-ai.vercel.app/services',
+  },
 };
 
 const strategicApproach = [
@@ -76,8 +95,85 @@ const llmFeatures = [
 ];
 
 export default function ServicesPage() {
+  // Structured data for services
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://x-agency-ai.vercel.app"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://x-agency-ai.vercel.app/services"
+      }
+    ]
+  };
+
+  const serviceListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "AI Services Offered by X Agency AI",
+    "description": "Comprehensive AI strategy, implementation, and training services",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Service",
+          "name": "AI Strategy Consulting",
+          "description": "We guide businesses from initial uncertainty to measurable business impact with AI. Discover high-impact use cases, assess AI maturity, and develop comprehensive transformation roadmaps.",
+          "provider": {
+            "@type": "Organization",
+            "name": "X Agency AI"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Service",
+          "name": "AI Engineering & Implementation",
+          "description": "Build custom AI agents, workflow automations, and integrate AI solutions into existing business systems. We solve business problems with the right combination of existing tools and custom AI solutions.",
+          "provider": {
+            "@type": "Organization",
+            "name": "X Agency AI"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Service",
+          "name": "AI Leadership & Training",
+          "description": "Transform executives and teams from AI-hesitant to AI-ambitious through comprehensive training backed by behavioral science and real-world implementation experience.",
+          "provider": {
+            "@type": "Organization",
+            "name": "X Agency AI"
+          }
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceListSchema) }}
+      />
       {/* Hero Section */}
       <section id="strategy" className="relative overflow-hidden py-20 sm:py-32">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800" />

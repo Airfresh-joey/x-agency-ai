@@ -2,8 +2,25 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Case Studies | AI Implementation Success Stories | X Agency AI',
-  description: 'See how companies have driven actual impact with AI. Real case studies showing hours saved, revenue increased, and costs reduced.',
+  title: 'Case Studies | AI Implementation Success Stories',
+  description: 'See how 50+ companies have driven actual impact with AI. Real case studies showing 8,000+ hours saved annually, $420,000 cost reductions, and 57% efficiency increases. Proven AI implementation results across industries.',
+  keywords: [
+    'AI case studies',
+    'AI implementation success stories',
+    'AI ROI examples',
+    'AI automation results',
+    'business AI transformation',
+    'AI agent case studies',
+    'enterprise AI results'
+  ],
+  openGraph: {
+    title: 'Case Studies | AI Implementation Success Stories | X Agency AI',
+    description: 'Real case studies showing hours saved, revenue increased, and costs reduced with AI implementation.',
+    images: ['/preview-case-studies.png'],
+  },
+  alternates: {
+    canonical: 'https://x-agency-ai.vercel.app/case-studies',
+  },
 };
 
 const caseStudies = [

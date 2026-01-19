@@ -1,4 +1,18 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Strategy & Implementation for Business Growth',
+  description: 'X Agency AI transforms businesses with AI strategy, custom AI agents, and implementation services. Drive revenue, increase profitability, and elevate employees with proven AI solutions. 300% higher success rate than in-house AI projects.',
+  openGraph: {
+    title: 'X Agency AI | From AI Confusion to AI Confidence',
+    description: 'Transform your business with AI. We help you pinpoint the right AI opportunities, implement them seamlessly, and deliver real business impact.',
+    images: ['/preview-homepage.png'],
+  },
+  alternates: {
+    canonical: 'https://x-agency-ai.vercel.app',
+  },
+};
 
 const partners = [
   { name: 'Meta', logo: '🔷' },
@@ -80,8 +94,113 @@ const faqs = [
 ];
 
 export default function Home() {
+  // Structured data for SEO and GEO
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "X Agency AI",
+    "url": "https://x-agency-ai.vercel.app",
+    "logo": "https://x-agency-ai.vercel.app/preview-homepage.png",
+    "description": "X Agency AI is a leading AI strategy and implementation agency helping businesses transform with artificial intelligence solutions, custom AI agents, and expert training.",
+    "foundingDate": "2023",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 AI Innovation Drive, Suite 150",
+      "addressLocality": "San Francisco",
+      "addressRegion": "CA",
+      "postalCode": "94102",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-555-123-4567",
+      "contactType": "Customer Service",
+      "email": "hello@xagencyai.com"
+    },
+    "sameAs": [
+      "https://twitter.com/xagencyai",
+      "https://linkedin.com/company/xagencyai"
+    ]
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "X Agency AI",
+    "image": "https://x-agency-ai.vercel.app/preview-homepage.png",
+    "description": "Expert AI strategy, implementation, and training services for businesses. We help companies find high-impact AI opportunities, implement custom AI agents, and train teams for AI transformation.",
+    "priceRange": "$$$$",
+    "url": "https://x-agency-ai.vercel.app",
+    "telephone": "+1-555-123-4567",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 AI Innovation Drive, Suite 150",
+      "addressLocality": "San Francisco",
+      "addressRegion": "CA",
+      "postalCode": "94102",
+      "addressCountry": "US"
+    },
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI Strategy Consulting",
+            "description": "Discover high-impact AI use cases, assess AI maturity, and develop comprehensive AI transformation roadmaps."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI Implementation & Engineering",
+            "description": "Build custom AI agents, workflow automations, and integrate AI solutions into existing business systems."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI Leadership & Training",
+            "description": "Transform teams from AI-hesitant to AI-ambitious through comprehensive training and change management."
+          }
+        }
+      ]
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://x-agency-ai.vercel.app"
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen">
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 sm:py-32">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800" />

@@ -2,8 +2,24 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Us | X Agency AI',
-  description: 'AI designed for the bottom line. We turn enterprise AI into real profitability, scale, and enterprise value.',
+  title: 'About Us | Leading AI Strategy & Implementation Agency',
+  description: 'AI designed for the bottom line. X Agency AI turns enterprise AI into real profitability, scale, and enterprise value. 300% higher success rate than in-house AI projects. Proven results across 50+ companies with 100+ high-ROI use cases.',
+  keywords: [
+    'AI agency',
+    'AI consulting firm',
+    'AI implementation company',
+    'enterprise AI partner',
+    'AI transformation experts',
+    'business AI specialists'
+  ],
+  openGraph: {
+    title: 'About Us | X Agency AI',
+    description: 'AI designed for the bottom line. We turn enterprise AI into real profitability, scale, and enterprise value.',
+    images: ['/preview-homepage.png'],
+  },
+  alternates: {
+    canonical: 'https://x-agency-ai.vercel.app/about',
+  },
 };
 
 const stats = [
